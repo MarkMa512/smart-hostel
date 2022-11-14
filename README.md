@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MarkMa512/smart-hostel">
-    <img src="media/team_logo.png" alt="Logo" width="72" height="36">
+    <img src="media/team_logo.png" alt="Logo" width="144" height="72">
   </a>
 
 <h3 align="center">Smart Hostel Management System</h3>
