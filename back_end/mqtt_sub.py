@@ -28,7 +28,7 @@ write_api = influx_client.write_api(write_options=SYNCHRONOUS)
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe("cs462-g-02/+")
+    client.subscribe("cs462-g-02/+", qos=2)
 
 
 def on_disconnect(client, userdata, rc):
