@@ -156,23 +156,29 @@
 - Micro-controller Program: [`/sensor_and_gateway/sensor_window_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/sensor_window_microbit.py)  
 - Extension board: [YWRobot micro:bit IO Extension Board](http://wiki.ywrobot.net/index.php?title=(SKU:BRD080003)IO_Extension_Board扩展板适用于Micro:bit)
 - Sensors
-  - HC SR501 PIR Motion Sensor 
+  - [HC SR501 PIR Motion Sensor](https://lastminuteengineers.com/pir-sensor-arduino-tutorial/)
+    - GND: G
+    - OUT: Pin0
+    - VCC: 3V
 
 
 3. reciever_microbit
 - Micro-controller: [Micro:bit V1](https://microbit.org/new-microbit/)
-- Micro-controller Program: [`/sensor_and_gateway/reciever_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/reciever_microbit.py)  
-
+- Micro-controller Program: [`/sensor_and_gateway/reciever_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/reciever_microbit.py) 
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo onto the respective machines
    ```sh
-   git clone https://github.com/MarkMa512/smart-hostel-mgmt-sys.git
+   git clone https://github.com/MarkMa512/smart-hostel.git
    ```
-2. 
+2. Setup the Microbits according to <a href="#sensors-and-device-configuration">Sensors and device configuration</a>
 
-3. 
+3. Gate-way Machine: 
+
+4. Back-end Machine: 
+
+5. Front-end Machine: 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
