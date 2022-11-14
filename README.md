@@ -38,15 +38,19 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#dashboard-screenshot">Dashboard Screenshoot</a></li>
+        <li><a href="#video-demo">Video Demo</a></li>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#directories">Directories</a></li>
+        <li><a href="#architectural-diagram">Architectural Diagram</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#sensors-and-device-configuration">Sensors and device configuration</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#troubleshooting">Troubleshooting</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -59,7 +63,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-### Dashboard Screenshoot 
+### Dashboard Screenshoot
 <img
   align="center"
   src="media/dashboard_table.png"
@@ -67,7 +71,7 @@
   title="dashboard_table"
   style="display: inline-block; margin: 0 auto; max-width: 200px">
 
-### Video Demo 
+### Video Demo
 [![Video Demo](https://img.youtube.com/vi/VCjBWMjaBcI/0.jpg)](https://www.youtube.com/watch?v=VCjBWMjaBcI)
 
 
@@ -113,7 +117,6 @@
   style="display: inline-block; margin: 0 auto; max-width: 200px">
 
 
-
 <!-- GETTING STARTED -->
 ## Getting Started
 
@@ -121,7 +124,7 @@
 1. Ensure [Python 3.9](https://www.python.org/downloads/) or higher is installed 
 2. Ensure [Node.js 16](https://nodejs.org/en/) or higher is installed
 
-### Sensors and device configuration: 
+### Sensors and device configuration
 1. sensor_microbit_door_microbit
 - Micro-controller: [Micro:bit V2](https://microbit.org/new-microbit/)
 - Micro-controller Program: [`/sensor_and_gateway/sensor_door_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/sensor_door_microbit.py) 
@@ -162,8 +165,6 @@
 
 
 ### Installation
-
-To get a local copy up and running, follow these simple example steps.
 
 1. Clone the repo
    ```sh
