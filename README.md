@@ -165,6 +165,7 @@
 3. reciever_microbit
 - Micro-controller: [Micro:bit V1](https://microbit.org/new-microbit/)
 - Micro-controller Program: [`/sensor_and_gateway/reciever_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/reciever_microbit.py) 
+- Connect to the Gateway machine via USB cable. 
 
 ### Installation
 
@@ -174,19 +175,36 @@
    ```
 2. Setup the Microbits according to <a href="#sensors-and-device-configuration">Sensors and device configuration</a>
 
-3. Gate-way Machine: 
+3. Gateway Machine: 
+  a. Enter
+  ```sh
+   cd sensor_and_gateway
+   ```
 
-4. Back-end Machine: 
+  b. Install the dependencies
+  ```sh
+   pip install -r requirement.txt
+   ```
+  
+  c. run `gateway.py`: 
+  ```sh
+   python3 gateway.py
+   ```
+   or 
+    ```sh
+   python gateway.py
+   ```
 
-5. Front-end Machine: 
+4. Back-end Machine: Please refer to [`back_end/README.md`](https://github.com/MarkMa512/smart-hostel/tree/master/back_end#readme)
 
+5. Front-end Machine: Please refer to [`front_end/README.md`](https://github.com/MarkMa512/smart-hostel/tree/master/front_end#readme)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Feature 1:
+- [x] Feature 1: 
   - [x] Feature a: 
   - [x] Feature b: 
   - [x] Feature c:
