@@ -175,23 +175,21 @@
    ```
 2. Setup the Microbits according to <a href="#sensors-and-device-configuration">Sensors and device configuration</a>
 
-3. Gateway Machine:  
-  a. Enter
-    ```sh
+3. Gateway Machine: Using terminal (macOS) or Command Prompt (Windows)  
+  a. Enter `sensor_and_gateway` directory:  
+    ```
     cd sensor_and_gateway
     ```
-
-  b. Install the dependencies
-    ```sh
+  b. Install the dependencies 
+    ```
     pip install -r requirement.txt
     ```
-  
-  c. run `gateway.py`: 
-    ```sh
+  c. run `gateway.py`:  
+    ```
     python3 gateway.py
     ```
    or 
-    ```sh
+    ```
     python gateway.py
     ```
 
