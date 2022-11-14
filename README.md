@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/MarkMa512/smart-hostel">
-    <img src="media/team_logo.png" alt="Logo" width="144" height="72">
+    <img src="media/team_logo.png" alt="Logo" width="137" height="69">
   </a>
 
 <h3 align="center">Smart Hostel Management System</h3>
@@ -221,7 +221,6 @@
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
 Team Member:
 - Integration: [Jin Ningxian](https://github.com/jinningxian)
 - Sensor and Model: [Ma Ningzhi](https://github.com/MarkMa512)

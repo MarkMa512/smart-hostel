@@ -26,5 +26,5 @@ npm run dev
 ```sh
 npm run build
 ```
-localhost link will be shown
+localhost link will be shown.  
 Do note that floorplan displays best on a 13.5 inch screen display.
