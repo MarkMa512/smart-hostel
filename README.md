@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/smart-hostel">
-    <!-- <img src="images/logo.png" alt="Logo" width="80" height="80"> -->
+    <img src="media/team_logo.png" alt="Logo" width="72" height="36">
   </a>
 
 <h3 align="center">Smart Hostel Management System</h3>
@@ -49,11 +49,7 @@
         <li><a href="#troubleshooting">Troubleshooting</a></li>
       </ul>
     </li>
-    <!-- <li><a href="#usage">Usage</a></li> -->
     <li><a href="#roadmap">Roadmap</a></li>
-    <!-- <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li> -->
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -88,24 +84,24 @@
 
 - [`/data_collection`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection): Data collection for sense making and visualization.  
 
-    - [`/data_collection/data`]()  
+    - [`/data_collection/data`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/data)  
     The light and sound data collected on 11/10/22 and 13/10/22 from a room.  
     Format: date, time, sounds, light  
     
   - [`/data_collection/data_reciever`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/data_receiver)  
     A node.js application that reads the serial data from reciever microbit. 
 
-  - [`/data_collection/desktop_client`]()  
-    Desktop client written in Python that logs the data to CSV file into the [`/data_collection/data`]() directory.  
+  - [`/data_collection/desktop_client`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/desktop_client)  
+    Desktop client written in Python that logs the data to CSV file into the [`/data_collection/data`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/data) directory.  
 
-  - [`/data_collection/dummy_data`]() 
+  - [`/data_collection/dummy_data`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/dummy_data) 
     Simulated data for demonstration purposes
 
-- [`/front_end`](): Vue.js front-end dashboard 
+- [`/front_end`](https://github.com/MarkMa512/smart-hostel/tree/master/front_end): Vue.js front-end dashboard 
 
-- [`/media`](): photos of models, setup and illustrations
+- [`/media`](https://github.com/MarkMa512/smart-hostel/tree/master/media): photos of models, setup and illustrations
 
-- [`/sensor_and_gateway`](): Microbit programs and gateway porgam
+- [`/sensor_and_gateway`](https://github.com/MarkMa512/smart-hostel/tree/master/sensor_and_gateway): Microbit programs and gateway porgam
 
 ### Architectural Diagram
 
@@ -128,7 +124,7 @@
 ### Sensors and device configuration: 
 1. sensor_microbit_door_microbit
 - Micro-controller: [Micro:bit V2](https://microbit.org/new-microbit/)
-- Micro-controller Program: [`/sensor_and_gateway/sensor_door_microbit.py`]() 
+- Micro-controller Program: [`/sensor_and_gateway/sensor_door_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/sensor_door_microbit.py) 
 - Extension board: [Octopus:bit(EF03405)](https://www.elecfreaks.com/learn-en/microbitExtensionModule/octopus_bit.html) 
 - Sensors: 
   - HC-SR-04 Ultrasonic Distance Sensor
@@ -154,7 +150,7 @@
 
 2. sensor_microbit_window_microbit
 - Micro-controller: [Micro:bit V1](https://microbit.org/new-microbit/)
-- Micro-controller Program: [`/sensor_and_gateway/sensor_window_microbit.py`]()  
+- Micro-controller Program: [`/sensor_and_gateway/sensor_window_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/sensor_window_microbit.py)  
 - Extension board: [YWRobot micro:bit IO Extension Board](http://wiki.ywrobot.net/index.php?title=(SKU:BRD080003)IO_Extension_Board扩展板适用于Micro:bit)
 - Sensors
   - HC SR501 PIR Motion Sensor 
@@ -162,7 +158,7 @@
 
 3. reciever_microbit
 - Micro-controller: [Micro:bit V1](https://microbit.org/new-microbit/)
-- Micro-controller Program: [`/sensor_and_gateway/reciever_microbit.py`]()  
+- Micro-controller Program: [`/sensor_and_gateway/reciever_microbit.py`](https://github.com/MarkMa512/smart-hostel/blob/master/sensor_and_gateway/reciever_microbit.py)  
 
 
 ### Installation
@@ -173,29 +169,12 @@ To get a local copy up and running, follow these simple example steps.
    ```sh
    git clone https://github.com/MarkMa512/smart-hostel-mgmt-sys.git
    ```
-2. Enter the directory with CMD (Windows) or Terminal (macOS)
+2. 
 
 3. 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- Troubleshooting -->
-## Troubleshooting
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation]()_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
