@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/smart-hostel">
+  <a href="https://github.com/MarkMa512/smart-hostel">
     <img src="media/team_logo.png" alt="Logo" width="72" height="36">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     a CS462 Internet Of Things: Technology and Application Project
     <br />
-    <a href="https://github.com/smart-hostel"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/MarkMa512/smart-hostel"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://youtu.be/VCjBWMjaBcI">View Video Demo</a>
     ·
-    <a href="https://github.com/smart-hostel/issues">Report Bug</a>
+    <a href="https://github.com/MarkMa512/smart-hostel/issues">Report Bug</a>
     ·
-    <a href="https://github.com/smart-hostel/issues">Request Feature</a>
+    <a href="https://github.com/MarkMa512/smart-hostel/issues">Request Feature</a>
   </p>
 </div>
 
