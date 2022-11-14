@@ -175,25 +175,25 @@
    ```
 2. Setup the Microbits according to <a href="#sensors-and-device-configuration">Sensors and device configuration</a>
 
-3. Gateway Machine: 
+3. Gateway Machine:  
   a. Enter
-  ```sh
-   cd sensor_and_gateway
-   ```
+    ```sh
+    cd sensor_and_gateway
+    ```
 
   b. Install the dependencies
-  ```sh
-   pip install -r requirement.txt
-   ```
+    ```sh
+    pip install -r requirement.txt
+    ```
   
   c. run `gateway.py`: 
-  ```sh
-   python3 gateway.py
-   ```
+    ```sh
+    python3 gateway.py
+    ```
    or 
     ```sh
-   python gateway.py
-   ```
+    python gateway.py
+    ```
 
 4. Back-end Machine: Please refer to [`back_end/README.md`](https://github.com/MarkMa512/smart-hostel/tree/master/back_end#readme)
 
