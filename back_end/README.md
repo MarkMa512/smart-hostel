@@ -12,8 +12,7 @@ pip install influxdb-client
 pip install paho-mqtt 
 ```
 
-2. Download influxdb
-https://portal.influxdata.com/downloads/
+2. Download [influxdb](https://portal.influxdata.com/downloads/)
 - platform: windows binaries
 - use powershell to run the download
 - unzip the file 
@@ -21,8 +20,8 @@ https://portal.influxdata.com/downloads/
 - open `localhost:8086` in your browser
 - sign up an account (make sure you put organisation as "local")
 - generate API token -> all access api token
-- bucket: iot_test8 (create bucket, and name it as iot_test8)
-- org: local
+- bucket: `iot_test8` (create bucket, and name it as iot_test8)
+- org: `local`
 - put your token into environmental file '.env' in the mqtt_sub folder, you should have something like this:
     ```
     BUCKET=iot_test8

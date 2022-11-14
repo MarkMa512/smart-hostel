@@ -1,6 +1,5 @@
-# frontend
+# Front End Application
 
-This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
@@ -10,20 +9,22 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+1. Project Setup
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+3. Compile and Minify for Production
 
 ```sh
 npm run build
 ```
+localhost link will be shown
+Do note that floorplan displays best on a 13.5 inch screen display.
