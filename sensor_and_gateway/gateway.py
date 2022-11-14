@@ -167,7 +167,7 @@ def handle_serial_data(s: serial.Serial) -> None:
         logger.info(
             f"Publish | topic: {GATEWAY['name']}/door | payload: {output_str}")
         mqttc.publish(
-            topic=f"{GATEWAY['name']}/door", payload=output_str, qos=0)
+            topic=f"{GATEWAY['name']}/door", payload=output_str, qos=2)
     elif (len(payload_list) == 4):
         # If the payload is from window
         for i in range(0, len(window_microbit_list)):
@@ -178,7 +178,7 @@ def handle_serial_data(s: serial.Serial) -> None:
         logger.info(
             f"Publish | topic: {GATEWAY['name']}/door | payload: {output_str}")
         mqttc.publish(
-            topic=f"{GATEWAY['name']}/window", payload=output_str, qos=0)
+            topic=f"{GATEWAY['name']}/window", payload=output_str, qos=2)
 
 
 def main() -> None:
