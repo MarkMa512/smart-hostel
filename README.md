@@ -202,18 +202,16 @@
 
 <!-- ROADMAP -->
 ## Roadmap
-- [x] Feature 1: 
-  - [x] Feature a: 
-  - [x] Feature b: 
-  - [x] Feature c:
-- [x] Feature 2: 
-  - [x] Feature a: 
-  - [x] Feature b: 
-  - [x] Feature c: 
-- [x] Feature 3: 
-  - [x] Feature a: 
-  - [x] Feature b: 
-  - [x] Feature c: 
+- [x] Event 1: On the light on after lights out hours 
+  - The Light sensor on sensor_microbit_door_microbit (implemented) and sensor_microbit_window_microbit (planned) detects the light level and compares it against a threshhold value. 
+- [x] Event 2: Make large noise after lights out hours 
+  - The Loudness sensor on sensor_microbit_door_microbit (implemented) detects the loudness level and compare it against a threshold value. 
+- [x] Event 3: Climbing out of window
+  - PIR Motion sensor connected to sensor_microbit_window_microbit detect any movement outside of the window, and the Light sensor on ensor_microbit_window_microbit (planned) detect if there is any changes to the light level as people moves out. 
+- [x] Event 4: Leave room after lights out hour 
+    - People Counting: Activated by magnetic sensor detecting the magnetic door open, the Ultrasonic Distance Sensor facing inside the room detects a reduction in the distance, thus minus the people count by 1. 
+- [x] Event 5:  Movement inside the room
+  - Movement detection: When the door is locked (detected by the magnetic sensor), the ultasonic distance sensor inside and outside of the room are re-purposed as detecting movement inside the room or along the corridor. 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
