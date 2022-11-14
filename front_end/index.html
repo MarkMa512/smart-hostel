@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuetify@2.0.10/dist/vuetify.min.css" />
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/babel-regenerator-runtime@6.5.0/runtime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.0.10/dist/vuetify.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
+    <script src="https://unpkg.com/vue-chartjs@3.4.0/dist/vue-chartjs.js"></script>
+            
+    
+    <!-- chart js script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <!-- styling -->
+     <style>
+      #room_id {
+        color: #A8D0FF;
+      }
+
+      .normalBox {
+        background-color: #254c70
+      }
+
+      .warningBox{
+        background-color: #580f00;
+      }
+    </style>
+</head>
+<body style="background-color: #737373">
+  <div id = "app" class = "container" style="height: 90vh">
+
+    <div class="container shadow position-relative h-75 w-75 mt-3 p-0" style="background-color: #a7a4a4; border-radius: 20px;">
+      <div class = "d-flex flex-column">
+        <!-- first row -->
+        <div class = "d-flex flex-row">
+          <div class = "d-inline-flex" style="background-color: #a7a4a4; height: 100px"></div>
+        </div>
+        <!-- row2 -->
+        <div class = "d-flex flex-row justify-content-end">
+          <div class = "normalBox d-inline-flex shadow-lg border border-1 border-right border-dark rounded-start" style="height: 100px; width: 100px; ">
+            <!-- room 2 -->
+            <div class="d-flex flex-column">
+              <div class="mb-auto mt-auto">
+                <!-- what text to put inside here? -->
+                <p style="display: none"></p>
+              </div>
+                <div>
+                  <p id = "room_id" class="m-1">2</p>
+                </div>
+            </div>
+          </div>
+          <!-- change here -->
+          <div v-bind:class = "r1_State" class = "d-inline-flex shadow border border-1 border-left border-dark rounded-end" style="height: 100px; width: 100px; ">
+            <!-- room 1 -->
+            <div class="d-inline-flex">
+              <p id = "room_id" class="align-self-end m-1">1</p>
+            </div>
+          </div>
+          <div class = "d-inline-flex" style="width: 27%; background-color: #a7a4a4;"></div>
+        </div>
+        
+        <!-- row4 -->
+        <div class = "d-flex flex-row">
+          <!-- first half -->
+          <div class="d-flex flex-column align-items-end">
+            <div class = "d-flex flex-row">
+              <div class = "normalBox d-inline-flex shadow-lg border border-1 border-right border-dark rounded-start align-self-end" style="height: 100px; width: 100px;">
+                <!-- room 5 -->
+                <div class="d-inline-flex">
+                  <p id = "room_id" class="align-self-end m-1">5</p>
+                </div>
+              </div>
+             
+              <div class = "normalBox d-inline-flex shadow border border-1 border-right border-dark rounded-start" style="height: 100px; width: 100px;">
+                <!-- room 4 -->
+                <div class="d-inline-flex">
+                  <p id = "room_id" class="align-self-end m-1">4</p>
+                </div>
+              </div>
+            </div>
+            <div class = "d-inline-flex shadow-lg border-2 border-top border-bottom border-dark" style="height: 50px; width: 440px ;background-color: #00584a;"></div>
+          </div>
+          <!-- second half -->
+          <!-- vertical -->
+          <div class = "d-inline-flex border-2 border-top border-bottom border-dark align-self-start" style="height:150px; width: 5%; background-color: #00584a;"></div>
+          <!-- column for stacking -->
+          <div class="d-flex flex-column align-items-end">
+            <!-- horizontal -->
+            <div class = "d-inline-flex border-2 border-top border-bottom border-dark align-self-end" style="height:50px; width:450px; background-color: #00584a;"></div>
+            <!-- room boxes -->
+            <div class = "d-flex flex-row align-self-start ">
+              <div class = "normalBox d-inline-flex shadow-lg border border-1 border-right border-dark rounded-start" style="height: 100px; width: 100px;">
+                <!-- room 9 -->
+                <div class="d-inline-flex">
+                  <p id = "room_id" class="align-self-end m-1">9</p>
+                </div>
+              </div>
+              <div class = "normalBox d-inline-flex shadow border border-1 border-right border-dark rounded-start" style="height: 100px; width: 100px; ">
+                <!-- room 10 -->
+                <div class="d-inline-flex">
+                  <p id = "room_id" class="align-self-end m-1">10</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- last row -->
+        <div class = "d-flex flex-row justify-content-start">
+          <div class = "d-inline-flex" style="width: 26%; background-color: #a7a4a4;"></div>
+          <div class = "normalBox d-inline-flex shadow-lg border border-1 border-right border-dark rounded-start" style="height: 100px; width: 100px; ">
+            <!-- room 6 -->
+            <div class="d-inline-flex">
+              <p id = "room_id" class="align-self-end m-1">6</p>
+            </div>
+          </div>
+          <div class = "normalBox d-inline-flex shadow border border-1 border-left border-dark rounded-end" style="height: 100px; width: 100px; ">
+            <!-- room 7 -->
+            <div class="d-inline-flex">
+              <p id = "room_id" class="align-self-end m-1">7</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <br>
+    
+
+    <!--  Carousel -->
+    <div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- table -->
+          <div class="container shadow position-relative h-auto w-75 my-3 p-3" style="background-color: #a7a4a4; border-radius: 20px;">
+            <table class="table mx-auto text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Room</th>
+                  <th scope="col">Light</th>
+                  <th scope="col">Noise</th>
+                  <th scope="col"># of People</th>
+                  <th scope="col">Window</th>
+                  <th scope="col">Door</th>
+                  <th scope="col">Room Movement</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope = "row"> 1 </th>
+                  <td> {{ window_light_status }} </td>
+                  <td> {{ room_sound_status }} </td>
+                  <td> {{ room_people_count }} </td>
+                  <td> {{ window_movement_status }} </td>
+                  <td> {{ door_locking_status }} </td>
+                  <td> {{ room_movement_status }} </td>
+                </tr>
+                <tr v-for="room_value in rooms_data">
+                  <th scope = "row"> {{ room_value.room }} </th>
+                  <td> {{ room_value.window_light_status }} </td>
+                  <td> {{ room_value.room_sound_status }} </td>
+                  <td> {{ room_value.people_status }} </td>
+                  <td> {{ room_value.window_movement_status }} </td>
+                  <td> {{ room_value.door_locking_status }} </td>
+                  <td> {{ room_value.room_movement_status }} </td>
+                </tr>
+               
+              
+              </tbody>
+            </table>
+  
+  
+            </div>
+            <!-- end table -->
+        </div>
+        <!-- sound rooms chart -->
+        <div class="carousel-item">
+          <div class="w-75 mx-auto shadow position-relative h-auto w-50 my-3 p-3" style="background-color: #ececec; border-radius: 20px;">  
+            <canvas id="people_rooms_chart"></canvas>
+          </div>
+        </div>
+        <!-- light rooms chart  -->
+        <div class="carousel-item ">
+          <div class="w-75 mx-auto shadow position-relative h-auto w-50 my-3 p-3" style="background-color: #ececec; border-radius: 20px;">  
+            <canvas id="light_rooms_chart"></canvas>
+          </div>
+        </div>
+        <!-- door open/close -->
+        <div class="carousel-item ">
+          <div class="w-75 mx-auto shadow position-relative h-auto w-50 my-3 p-3" style="background-color: #ececec; border-radius: 20px;">  
+            <!-- dropdown chart here -->              
+            <canvas id="door_locking_chart"></canvas>   
+          </div>
+        </div>
+        <!-- sound levels  -->
+        <div class="carousel-item ">
+          <div class="w-75 mx-auto shadow position-relative h-auto w-50 my-3 p-3" style="background-color: #ececec; border-radius: 20px;">  
+            <!-- dropdown chart here -->               
+              <canvas id="sound_levels_linechart"></canvas>    
+          </div>
+        </div>
+        <!-- sound, light, people charts -->
+        <div class="carousel-item ">
+          <div class="w-75 mx-auto shadow position-relative h-auto w-50 my-3 p-3" style="background-color: #ececec; border-radius: 20px;">  
+            <!-- dropdown chart here -->               
+              <canvas id="group_chart"></canvas>    
+          </div>
+        </div>
+        
+      </div>
+      <!-- buttons to go next and back -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    </div>
+
+  <!-- end of div -->
+  </div>
+
+  <script>
+      new Vue({
+        el: "#app",
+        vuetify: new Vuetify(),
+        data() {
+          return {
+            // dummy data from room 2 onwards
+            rooms_data: [
+              {room: 2,window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement"},
+              {room: 4, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement" },
+              {room: 5, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement" },
+              {room: 6, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement" },
+              {room: 7, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement"},
+              {room: 9, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement"},
+              {room: 10, window_light_status: "Off", room_sound_status: "Not Noisy", people_status: 3, window_movement_status: "Closed", door_locking_status: "Closed", room_movement_status: "No Movement"},
+            ],
+
+            // api data results will be replaced here
+            room_dist_str_in: "",
+            room_door_locking: "",
+            room_sound_level: "",
+            room_people_count: "",
+            window_movement: "",
+            window_light_level: "",
+
+            // status returned to put in table
+            window_light_status: "",
+            room_sound_status: "",
+            //people_status: "",
+            window_movement_status: "",
+            door_locking_status: "",
+            room_movement_status: "",
+            last_door_open_time: "",
+
+
+            // people count
+            people_count_line: {
+              type: 'line',
+              data: {
+                  labels: ['2300', '0000', '0100', '0200','0300', '0400', '0500', '0600', '0700'],
+                  datasets: [{
+                      label: 'People Levels',
+                      // current sound level data from api here
+                      data: [0, 2, 3, 0, 3, 5, 5, 3, 4, 1, 4, 0, 3, 0, 0, 2, 1, 1, 4, 4, 3, 5, 4, 0, 5, 5, 3, 1, 0, 3, 0, 4, 3, 0, 0, 5, 2, 3, 1, 5, 2, 3, 3, 5, 2, 4, 2, 1, 2, 5, 4, 1, 5, 4, 1, 4, 2, 4, 2, 1, 5, 3, 2, 4, 2, 2, 5, 3, 5, 3, 1, 3, 5, 1, 5, 2, 0, 5, 0, 0, 0, 0, 0, 5, 0, 4, 1, 2, 4, 2, 5, 0, 5, 0, 4, 5, 3, 2, 3, 0],
+                      backgroundColor: [
+                          'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                          'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 2
+                  }]
+              },
+              options: {
+                  scales: {
+                    y: {
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      },  
+                      ticks: {
+                        color: "black",
+                        beginAtZero: true,
+                        stepSize: 1,
+                      }
+                    },
+                    x: {  
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      }, 
+                      ticks: {
+                        color: "black",
+                      }
+                    },
+                  }
+              }
+            },
+            // light levels all rooms
+            light_rooms_chart_data: {
+                type: 'line',
+                data: {
+                    labels: ['2300', '0000', '0100', '0200','0300', '0400', '0500', '0600', '0700'],
+                    datasets: [{
+                        label: 'Light Levels',
+                        // current light level data from api here
+                        // light levels vary from 0-250, 100 is threshold
+                        data: [0, 103, 15, 176, 193, 212, 190, 57, 23, 98, 74, 236, 13, 93, 173, 44, 115, 204, 221, 27, 71, 82, 50, 61, 171, 188, 110, 40, 238, 203, 184, 78, 18, 7, 11, 199, 101, 77, 184, 44, 45, 101, 55, 182, 62, 154, 9, 183, 145, 111, 230, 232, 143, 94, 64, 213, 13, 250, 174, 246, 93, 120, 64, 241, 250, 34, 12, 141, 159, 46, 159, 135, 176, 224, 245, 226, 189, 19, 108, 187, 50, 219, 209, 238, 24, 198, 66, 13, 89, 203, 28, 155, 209, 180, 59, 248, 56, 188, 210, 42],
+                        backgroundColor: [
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                      y: {
+                        grid:{
+                          color:"rgba(11, 11, 11, 0.22)"
+                        },  
+                        min: 0,
+                        max: 250,
+                        ticks: {
+                          color: "black",
+                          beginAtZero: true,
+                          stepSize: 100,
+                          callback:function(value,index,values){
+                                if (value == 100) return "On";
+                            }
+                        }
+                      },
+                      x: {  
+                        grid:{
+                          color:"rgba(11, 11, 11, 0.22)"
+                        }, 
+                        ticks: {
+                          color: "black",
+                        }
+                      },
+                    }
+                }
+            },
+            // sound levels line chart
+            sound_levels_line: {
+              type: 'line',
+              data: {
+                  labels: ['2300', '0000', '0100', '0200','0300', '0400', '0500', '0600', '0700'],
+                  datasets: [{
+                    label: 'Noise Level',
+                    // data for our model is randomised
+                    data: [23, 27, 30, 38, 31, 39, 39, 24, 33, 48, 39, 39, 32, 21, 23, 45, 47, 43, 30, 27, 27, 29, 23, 40, 27, 45, 48, 22, 20, 23, 44, 26, 38, 31, 24, 32, 30, 34, 48, 34, 47, 22, 37, 38, 41, 22, 33, 20, 23, 45, 33, 30, 40, 38, 38, 45, 27, 22, 31, 33, 27, 38, 25, 40, 37, 46, 33, 21, 23, 43, 24, 48, 46, 38, 39, 34, 25, 39, 22, 42, 47, 32, 34, 46, 30, 34, 21, 29, 36, 46, 22, 22, 29, 30, 27, 25, 48, 33, 30, 38],
+                    backgroundColor: [
+                          'rgb(145,163,178)'
+                      ],
+                      borderColor: [
+                          'rgba(66, 100, 133, 1)'
+                      ],
+                      borderWidth: 2
+                  }],
+                  
+              },
+              options: {
+                  scales: {
+                    y: {
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      },  
+                      ticks: {
+                        color: "black",
+                        beginAtZero: true
+                      }
+                    },
+                    x: {  
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      }, 
+                      ticks: {
+                        color: "black",
+                      }
+                    },
+                  }
+              }
+            },
+            // door locking chart
+            door_locking_chart_data: {
+                type: 'line',
+                data: {
+                    labels: ['2300', '0000', '0100', '0200','0300', '0400', '0500', '0600', '0700'],
+                    datasets: [{
+                        label: 'Door',
+                        // current light level data from api here
+                        data: [0,0,0,1,0,1,0],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    scales: {
+                      y: {
+                        grid:{
+                          color:"rgba(11, 11, 11, 0.22)"
+                        },  
+                        ticks: {
+                          color: "black",
+                          beginAtZero: true,
+                          stepSize: 1,
+                          callback:function(value,index,values){
+                                if (value == 1) return "Closed";
+                                if (value == 0) return "Open";
+                          }  
+                        }
+                      },
+                      x: {  
+                        grid:{
+                          color:"rgba(11, 11, 11, 0.22)"
+                        }, 
+                        ticks: {
+                          color: "black",
+                        }
+                      },
+                    }
+                }
+            },
+            // group chat
+            group_chart_data: {
+              type: 'line',
+              data: {
+                  labels: ['2300', '0000', '0100', '0200','0300', '0400', '0500', '0600', '0700'],
+                  datasets: [{
+                    label: 'Noise Level',
+                    // data for our model is randomised
+                    data: [42, 100, 112, 124, 249, 161, 3, 192, 168, 108, 102, 106, 120, 1, 159, 144, 216, 61, 176, 244, 133, 212, 1, 12, 214, 118, 105, 214, 7, 32, 210, 166, 145, 51, 62, 114, 157, 151, 7, 147, 22, 86, 28, 145, 107, 209, 157, 49, 211, 41, 12, 175, 15, 138, 231, 190, 152, 55, 99, 45, 230, 10, 100, 134, 192, 146, 180, 184, 178, 241, 138, 126, 148, 149, 117, 139, 128, 70, 234, 110, 231, 169, 189, 119, 107, 124, 120, 174, 179, 185, 137, 144, 122, 130, 129, 211, 200, 241, 178, 195] ,
+                    backgroundColor: [
+                          'rgb(145,163,178)'
+                      ],
+                      borderColor: [
+                          'rgba(66, 100, 133, 1)'
+                      ],
+                      borderWidth: 2,
+                      yAxisID: 'y'
+                  },
+                  {
+                    label: 'Light Levels',
+                        // current light level data from api here
+                        // light levels vary from 0-250, 100 is threshold
+                        data: [0, 103, 15, 176, 193, 212, 190, 57, 23, 98, 74, 236, 13, 93, 173, 44, 115, 204, 221, 27, 71, 82, 50, 61, 171, 188, 110, 40, 238, 203, 184, 78, 18, 7, 11, 199, 101, 77, 184, 44, 45, 101, 55, 182, 62, 154, 9, 183, 145, 111, 230, 232, 143, 94, 64, 213, 13, 250, 174, 246, 93, 120, 64, 241, 250, 34, 12, 141, 159, 46, 159, 135, 176, 224, 245, 226, 189, 19, 108, 187, 50, 219, 209, 238, 24, 198, 66, 13, 89, 203, 28, 155, 209, 180, 59, 248, 56, 188, 210, 42],
+                        backgroundColor: [
+                            'rgba(255, 206, 86, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 2,
+                        yAxisID: 'y'
+                  },
+                  {
+                    label: 'People Levels',
+                      // current sound level data from api here
+                      data: [3,3,2,4,5,5,3,3,2,2,3,3,3],
+                      backgroundColor: [
+                          'rgba(255, 159, 64, 0.2)'
+                      ],
+                      borderColor: [
+                          'rgba(255, 159, 64, 1)'
+                      ],
+                      borderWidth: 2,
+                      yAxisID: 'y1'
+                  }
+                ],
+                  
+              },
+              options: {
+                  scales: {
+                    y: {
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      },  
+                      ticks: {
+                        color: "black",
+                        beginAtZero: true
+                      },
+                      position: 'left'
+                    },
+                    x: {  
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      }, 
+                      ticks: {
+                        color: "black",
+                      }
+                    },
+                    y1: {
+                      grid:{
+                        color:"rgba(11, 11, 11, 0.22)"
+                      },  
+                      ticks: {
+                        color: "black",
+                        beginAtZero: true
+                      },
+                      position: 'right'
+                    },
+                  }
+              }
+            },
+          }
+        },
+        computed:{
+          // working on state of room 1 only 
+          r1_State(){
+            if (this.window_light_status == "On" || this.room_sound_status == "Noisy" || this.room_people_count != 3 || this.movement_status == "Open" || this.door_locking_status == "Open" || this.room_movement_status == "Movement") {
+              boxtype = 'warningBox'
+            } else {
+              boxtype = 'normalBox'
+            }
+            return boxtype
+          }
+        },      
+        mounted: function () {
+          this.getListData();
+          const people_rooms_ctx = document.getElementById('people_rooms_chart').getContext('2d');
+            const people_rooms_chart = new Chart(people_rooms_ctx, this.people_count_line);
+
+            // light rooms
+            const light_rooms_ctx = document.getElementById('light_rooms_chart').getContext('2d');
+            const light_rooms_chart = new Chart(light_rooms_ctx, this.light_rooms_chart_data);
+
+            //noise level over time
+
+            // motion level over time
+
+            // incident over time
+
+            // sound levels line
+            const sound_levels_line_ctx = document.getElementById('sound_levels_linechart').getContext('2d');
+            const per_room_chart = new Chart(sound_levels_line_ctx, this.sound_levels_line);
+
+            // door open/close over time
+            const door_locking_line_ctx = document.getElementById('door_locking_chart').getContext('2d');
+            const door_locking_chart = new Chart(door_locking_line_ctx, this.door_locking_chart_data);
+
+            // chart over time
+            const group_chart_ctx = document.getElementById('group_chart').getContext('2d');
+            const group_chart = new Chart(group_chart_ctx, this.group_chart_data);
+
+        },
+        methods: {
+          test(){
+            console.log("LOGGGGING")
+          },
+          door(){
+            this.last_door_open_time = update_door_open_time(this.last_door_open_time);
+            if(alarm_door(this.door_status, this.update_door_open_time)){
+              // action for the door open more than 60 seconds 
+              
+            }
+          },
+          // this.last_door_open_time
+          update_door_open_time(pres_door_open_time){
+            if(this.door_locking_status != "Open"){
+              return new Date();
+            }return pres_door_open_time;
+          },
+          alarm_door(pres_door_open_time){
+            crr_time = new Date();
+            // this.door_locking_status = "Open"
+            if(this.door_locking_status == "Open"){
+              time_open_in_second = crr_time - pres_door_open_time;
+              if (time_open_in_second > 60){
+                return true;
+              }
+            }
+            return false; 
+          },
+          getListData: async function () {
+
+            this.status = "getting data...";
+
+            await axios.get("http://127.0.0.1:5000/get-data").then((response) => {
+              //console.log(response.data)
+              data_too_update = {
+                "room":{
+                  
+                },
+                "window":{
+
+                },
+                "timestamp":{
+                  
+                }
+              }
+
+              // get current date
+              const today = new Date();
+              var dd = String(today.getDate()).padStart(2, '0');
+              var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+              var yyyy = today.getFullYear();
+              // format: yyyy-mm-dd
+              current_date = yyyy + '-' + mm + '-' + dd
+              
+              //get current time
+              var hours = String((today.getHours()<10?'0':'') + today.getHours())
+              var minutes = String((today.getMinutes()<10?'0':'') + today.getMinutes())
+              var seconds = String((today.getSeconds()<10?'0':'') + today.getSeconds())
+
+              current_time =  hours + ":" + minutes + ":" + seconds
+
+              // get current time
+              for(n in response.data){
+                time_ = response.data[n]['_time'] //timestamp 
+                sensor_type = response.data[n]['_field'] //light_level ....
+                location_ = response.data[n]['location'] //window or door 
+                room_door = response.data[n]['_measurement'] //room1 room2 .... 
+                value_ = response.data[n]['_value'] //value
+                
+                
+                date_time = time_.split("T") 
+
+                
+                day = String(date_time[0]);
+                time = String(date_time[1].split(".")[0])
+                raw_time = day + time
+                for_data_now = {"sensor": sensor_type,"value": value_, "date": day, "time": time, "rawtime": raw_time}
+                
+                if(location_ == "d"){
+                  if(!data_too_update["room"][room_door]){
+                    data_too_update["room"][room_door] = [for_data_now]
+                  }else{
+                    data_too_update["room"][room_door].push(for_data_now)
+                  }
+                }else{
+                  if(!data_too_update["window"][room_door]){
+                    data_too_update["window"][room_door] = [for_data_now]
+                  }else{
+                    data_too_update["window"][room_door].push(for_data_now)
+                  }
+                }
+               
+                
+              }
+              //here is the updated json format
+
+              latest_data_room = data_too_update["room"]["room1"]
+              latest_data_window = data_too_update["window"]["room1"]
+
+              const dist_str_in = []
+              const door_locking = []
+              const light_level = []
+              const people_count = []
+              const sound_level = []
+              const movement = []
+
+         
+              // window assignment
+              for (let i = 0; i < latest_data_window.length; i++) {
+                
+                if(latest_data_window[i]['sensor'] == "movement"){
+                  movement_timestamps = {}
+                  movement_rawtime = latest_data_window[i]['rawtime']
+                  movement_value = latest_data_window[i]['value']
+                  movement_timestamps[movement_rawtime] = movement_value
+                  movement.push(movement_timestamps)
+                }
+
+              }
+
+              for (let i = 0; i < latest_data_room.length; i++) {
+
+                if(latest_data_room[i]['sensor'] == "light_level"){
+                  light_timestamps = {}
+                  light_rawtime = latest_data_room[i]['rawtime']
+                  light_value = latest_data_room[i]['value']
+                  light_timestamps[light_rawtime] = light_value
+                  light_level.push(light_timestamps)
+                }
+                
+                if(latest_data_room[i]['sensor'] == "dist_str_in"){
+                  dist_str_in_timestamps = {}
+                  dist_str_in_rawtime = latest_data_room[i]['rawtime']
+                  dist_str_in_value = latest_data_room[i]['value']
+                  dist_str_in_timestamps[dist_str_in_rawtime] = dist_str_in_value
+                  dist_str_in.push(dist_str_in_timestamps)
+                }
+
+                if(latest_data_room[i]['sensor'] == "door_locking"){
+                  door_locking_timestamps = {}
+                  door_locking_rawtime = latest_data_room[i]['rawtime']
+                  door_locking_value = latest_data_room[i]['value']
+                  door_locking_timestamps[door_locking_rawtime] = door_locking_value
+                  door_locking.push(door_locking_timestamps)
+                }
+                if(latest_data_room[i]['sensor'] == "sound_level"){
+                  sound_level_timestamps = {}
+                  sound_level_rawtime = latest_data_room[i]['rawtime']
+                  sound_level_value = latest_data_room[i]['value']
+                  sound_level_timestamps[sound_level_rawtime] = sound_level_value
+                  sound_level.push(sound_level_timestamps)
+                }
+                if(latest_data_room[i]['sensor'] == "people_count"){
+                  people_count_timestamps = {}
+                  people_count_rawtime = latest_data_room[i]['rawtime']
+                  people_count_value = latest_data_room[i]['value']
+                  people_count_timestamps[people_count_rawtime] = people_count_value
+                  people_count.push(people_count_timestamps)
+                }
+              }
+
+
+              latest_cleaned_data = {"dist_str_in": Object.values(dist_str_in.pop())[0], "door_locking": Object.values(door_locking.pop())[0], "sound_level": Object.values(sound_level.pop())[0], "people_count": Object.values(people_count.pop())[0], "movement": Object.values(movement.pop())[0], "light_level": Object.values(light_level.pop())[0]}
+              
+              console.log(latest_cleaned_data)
+
+              // assigning back numerical results to data
+              this.room_dist_str_in = latest_cleaned_data["dist_str_in"]
+              this.room_sound_level = latest_cleaned_data["sound_level"]
+              this.room_door_locking = latest_cleaned_data["door_locking"]
+              this.room_people_count = latest_cleaned_data["people_count"]
+              this.window_movement = latest_cleaned_data["movement"]
+              this.window_light_level = latest_cleaned_data["light_level"]
+
+              // assigning status to data
+              // threshold
+              if (this.window_light_level >= 100){
+                this.window_light_status = "On"
+              }
+              if (this.window_light_level < 100){
+                this.window_light_status = "Off"
+              }
+              if (this.room_sound_level >= 100){
+                this.room_sound_status = "Noisy"
+              }
+              if (this.room_sound_level < 100){
+                this.room_sound_status = "Not Noisy"
+              }
+              if (this.room_people_count > 3){
+                this.people_status = "Exceed"
+              }
+              if (this.room_people_count <= 3){
+                this.people_status = "Normal"
+              }
+              if (this.window_movement == 1){
+                this.window_movement_status = "Open"
+              }
+              if (this.window_movement == 0){
+                this.window_movement_status = "Closed"
+              }
+              if (this.room_door_locking == 0){
+                this.door_locking_status = "Open"
+              }
+              if (this.room_door_locking == 1){
+                this.door_locking_status = "Closed" 
+              }
+              if (this.room_dist_str_in > 23){
+                this.room_movement_status = "No Movement"
+              }
+              if (this.room_dist_str_in <= 23){
+                this.room_movement_status = "Movement"
+              }
+              
+            })
+              .catch(function (error) {
+                console.log(error);
+              });
+          },
+
+        },
+         
+         
+       
+      })
+
+
+      
+  </script>
+</body>
+</html>

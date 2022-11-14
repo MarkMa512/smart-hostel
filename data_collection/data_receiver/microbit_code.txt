@@ -1,0 +1,9 @@
+from microbit import *
+
+
+# Code in a 'while True:' loop repeats forever
+while True:
+    if button_a.is_pressed():
+        print("Welcome")
+    elif button_b.is_pressed():
+        print("World")
