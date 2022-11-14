@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/smart-hostel-mgmt-sys">
+  <a href="https://github.com/smart-hostel">
     <!-- <img src="images/logo.png" alt="Logo" width="80" height="80"> -->
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     a CS462 Internet Of Things: Technology and Application Project
     <br />
-    <a href="https://github.com/smart-hostel-mgmt-sys"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/smart-hostel"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://youtu.be/VCjBWMjaBcI">View Video Demo</a>
     ·
-    <a href="https://github.com/smart-hostel-mgmt-sys/issues">Report Bug</a>
+    <a href="https://github.com/smart-hostel/issues">Report Bug</a>
     ·
-    <a href="https://github.com/smart-hostel-mgmt-sys/issues">Request Feature</a>
+    <a href="https://github.com/smart-hostel/issues">Request Feature</a>
   </p>
 </div>
 
@@ -84,16 +84,15 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Directories
+- [`/back_end`](https://github.com/MarkMa512/smart-hostel/tree/master/back_end): Flask backend application that interact with InfluxDB and provides REST API for the Front-end dashboard to interact  with.  
 
-- [`/back_end`](https://github.com/MarkMa512/smart-hostel-mgmt-sys/tree/master/back_end): Flask backend application that interact with InfluxDB and provides REST API for the Front-end dashboard to interact  with.  
-
-- [`/data_collection`](https://github.com/MarkMa512/smart-hostel-mgmt-sys/tree/master/data_collection): Data collection for sense making and visualization.  
+- [`/data_collection`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection): Data collection for sense making and visualization.  
 
     - [`/data_collection/data`]()  
     The light and sound data collected on 11/10/22 and 13/10/22 from a room.  
     Format: date, time, sounds, light  
     
-  - [`/data_collection/data_reciever`](https://github.com/MarkMa512/smart-hostel-mgmt-sys/tree/master/data_collection/data_receiver)  
+  - [`/data_collection/data_reciever`](https://github.com/MarkMa512/smart-hostel/tree/master/data_collection/data_receiver)  
     A node.js application that reads the serial data from reciever microbit. 
 
   - [`/data_collection/desktop_client`]()  
@@ -104,7 +103,19 @@
 
 - [`/front_end`](): Vue.js front-end dashboard 
 
+- [`/media`](): photos of models, setup and illustrations
+
 - [`/sensor_and_gateway`](): Microbit programs and gateway porgam
+
+### Architectural Diagram
+
+<img
+  align="center"
+  src="media/architectural_design.png"
+  alt="dashboard_table"
+  title="dashboard_table"
+  style="display: inline-block; margin: 0 auto; max-width: 200px">
+
 
 
 <!-- GETTING STARTED -->
@@ -120,8 +131,26 @@
 - Micro-controller Program: [`/sensor_and_gateway/sensor_door_microbit.py`]() 
 - Extension board: [Octopus:bit(EF03405)](https://www.elecfreaks.com/learn-en/microbitExtensionModule/octopus_bit.html) 
 - Sensors: 
-  - HC-SR-04 Ultrasonic Distance Sensor (2)
-  - Magnetic Sensor 
+  - HC-SR-04 Ultrasonic Distance Sensor
+    - sonar_out: 
+      - Vcc: Pin12 3V
+      - Trig: Pin12 S
+      - Echo: Pin13 S
+      - Gnd: Pin13 G
+    - sonar_in: 
+      - Vcc: Pin15 3V
+      - Trig: Pin15 S
+      - Echo: Pin16 S
+      - Gnd: Pin16 G
+  - [DFROBOT Magnetic Sensor V2](https://wiki.dfrobot.com/Digital_magnetic_sensor_SKU__DFR0033)
+    - Please align the color of the cable to that of the Octopus:bit board, at Pin0. 
+<img
+  align="center"
+  src="media/door_microbit_setup.png"
+  alt="dashboard_table"
+  title="dashboard_table"
+  style="display: inline-block; margin: 0 auto; max-width: 200px">
+
 
 2. sensor_microbit_window_microbit
 - Micro-controller: [Micro:bit V1](https://microbit.org/new-microbit/)
@@ -192,10 +221,10 @@ _For more examples, please refer to the [Documentation]()_
 ## Acknowledgments
 
 Team Member:
-- [Jin Ningxian](https://github.com/jinningxian)
-- [Ma Ningzhi](https://github.com/MarkMa512)
-- [Ng Jing Wen](https://github.com/ngjw1599)
-- [Tan Jun An](https://github.com/junan-tan-2019)
-- [Tan Keah Keat](https://github.com/kk-tan-2019)
+- Integration: [Jin Ningxian](https://github.com/jinningxian)
+- Sesnor and Model: [Ma Ningzhi](https://github.com/MarkMa512)
+- Front-end: [Ng Jing Wen](https://github.com/ngjw1599)
+- Back-end: [Tan Jun An](https://github.com/junan-tan-2019)
+- Algorithm and Analysis: [Tan Keah Keat](https://github.com/kk-tan-2019)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
